@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégories{% endblock %}
+
+{% block body %}
+
+<div class="category-index-wrapper">
+    <h1 class="category-index-wrapper__titre">Catégories</h1>
+    {% if app.user %}
+    <a href="{{path('ajout-categorie')}}" class="bouton-admin">Ajouter une catégorie</a>
+    {% endif %}
+    <div class="liste-categories">
+        
+        {% for cat in cats %}
+        <a href=" {{ path('produits-par-categorie', {'cat' : cat.id }) }}"
+            class="liste-categories__item">{{ cat.nom|capitalize }}</a>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

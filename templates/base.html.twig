@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Accueil{% endblock %} - Boutique de reconditionnement</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+    <!-- FontAwesome 5.15.3 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </script>
+
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+
+<body>
+    <header>
+        <img src="{{ asset('assets/img/bann.png') }}" alt="bannière du site">
+        {# menu visiteurs #}
+        <ul class="nav-top">
+            {% if app.user %}
+
+            
+            <li class="nav-top__bouton">
+                <a class="nav-top__bouton__lien" href="{{ path('product') }}">Produits</a>
+            </li>
+            <li class="nav-top__bouton">
+                <a class="nav-top__bouton__lien" href="{{ path('category') }}">Catégories</a>
+            </li>
+            <li class="nav-top__bouton">
+                <a class="nav-top__bouton__lien" href="{{ path('app_logout') }}">Déconnexion</a>
+            </li>
+            <li class="nav-top__user">
+                <p class="nav-top__bouton__lien">Bonjour {{ app.user.firstName }} !</p>
+            </li>
+
+            {% else %}
+                
+            <li class="nav-top__bouton">
+                <a class="nav-top__bouton__lien" href="{{ path('accueil') }}"><i class="fas fa-home"></i></a>
+            </li>
+            <li class="nav-top__bouton">
+                <a class="nav-top__bouton__lien" href="{{ path('product') }}">Produits</a>
+            </li>
+            <li class="nav-top__bouton">
+                <a class="nav-top__bouton__lien" href="{{ path('category') }}">Catégories</a>
+            </li>
+            
+            {% endif %}
+            
+        </ul>
+
+        {# menu admin #}
+        {# <ul class="nav-top">
+            <li class="nav-top__bouton">
+                <a class="nav-top__bouton__lien" href="#">Liste produits</a>
+            </li>
+            <li class="nav-top__bouton">
+                <a class="nav-top__bouton__lien" href="#">Liste catégories</a>
+            </li>
+            <li class="nav-top__bouton">
+                <a class="nav-top__bouton__lien" href="#"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+        </ul> #}
+
+    </header>
+    {% block body %}{% endblock %}
+</body>
+
+</html>

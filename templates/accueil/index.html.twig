@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+<div class="accueil-wrapper">
+    <h1 class="accueil-wrapper__titre">Bienvenue !</h1>
+
+    <div class="presentation">
+        <div class="presentation__equipe">
+            <h1 class="presentation__equipe__titre">Qui sommes-nous ?</h1>
+            <div>
+                <img src="{{ asset('assets/img/equipe.jpg') }}" alt="notre équipe">
+                <div>
+                    <p>Quid enim tam absurdum quam delectari multis inanimis rebus, ut honore, ut gloria, ut aedificio,
+                        ut
+                        vestitu cultuque
+                        corporis, animante virtute praedito, eo qui vel amare vel, ut ita dicam, redamare possit, non
+                        admodum delectari?
+                        Nihil est enim remuneratione benevolentiae, nihil vicissitudine studiorum officiorumque
+                        iucundius.
+                    </p>
+
+                    <p>Denique Antiochensis ordinis vertices sub uno elogio iussit occidi ideo efferatus, quod ei
+                        celebrari
+                        vilitatem
+                        intempestivam urgenti, cum inpenderet inopia, gravius rationabili responderunt; et perissent ad
+                        unum
+                        ni comes
+                        orientis tunc Honoratus fixa constantia restitisset.</p>
+
+                    <p>Et est admodum mirum videre plebem innumeram mentibus ardore quodam infuso cum dimicationum
+                        curulium
+                        eventu
+                        pendentem. haec similiaque memorabile nihil vel serium agi Romae permittunt. ergo redeundum ad
+                        textum.</p>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="presentation__valeurs">
+            <h1 class="presentation__valeurs__titre">Nos valeurs</h1>
+            <div>
+                <img src="{{ asset('assets/img/valeurs.jpg') }}" alt="nos valeurs">
+                <div>
+                    <p>Quid enim tam absurdum quam delectari multis inanimis rebus, ut honore, ut gloria, ut aedificio,
+                        ut
+                        vestitu cultuque
+                        corporis, animante virtute praedito, eo qui vel amare vel, ut ita dicam, redamare possit, non
+                        admodum delectari?
+                        Nihil est enim remuneratione benevolentiae, nihil vicissitudine studiorum officiorumque
+                        iucundius.
+                    </p>
+
+                    <p>Denique Antiochensis ordinis vertices sub uno elogio iussit occidi ideo efferatus, quod ei
+                        celebrari
+                        vilitatem
+                        intempestivam urgenti, cum inpenderet inopia, gravius rationabili responderunt; et perissent ad
+                        unum
+                        ni comes
+                        orientis tunc Honoratus fixa constantia restitisset.</p>
+
+                    <p>Et est admodum mirum videre plebem innumeram mentibus ardore quodam infuso cum dimicationum
+                        curulium
+                        eventu
+                        pendentem. haec similiaque memorabile nihil vel serium agi Romae permittunt. ergo redeundum ad
+                        textum.</p>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class="nouveautes">
+        <h1 class="nouveautes__titre">Nos nouveaux produits</h1>
+        <div class="nouveautes__produits">
+            {% if products %}
+                {% for p in products %}
+                <a href="{{ path('single-product', {'id' : p.id }) }}" class="nv-produit">
+                    <h2>{{ p.name }}</h2>
+                </a>                    
+                {% endfor %}
+            {% else %}
+                <h2>Pas encore de nouveau produit</h2>
+            {% endif %}
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

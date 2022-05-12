@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les articles{% endblock %}
+
+{% block body %}
+
+<div class="produits-index-wrapper">
+    <h1 class="produits-index-wrapper__title">Nos articles reconditionnés</h1>
+    {% if app.user %}
+    <a href="{{path('ajout-produit')}}" class="bouton-admin">Ajouter un produit</a>
+    {% endif %}
+    <div class="liste-produits">
+        {% if products %}
+            {% for p in products %}
+            <a href="{{ path('single-product', {'id' : p.id }) }}" class="nv-produit">
+                <h2>{{ p.name|capitalize }}</h2>
+            </a>
+            {% endfor %}
+        {% else %}
+            <h2>Pas encore d'article en boutique... revenez plus tard !</h2>
+        {% endif %}
+    </div>  
+    
+</div>
+{% endblock %}

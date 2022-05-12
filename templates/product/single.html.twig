@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block body %}
+
+<div class="detail-produit-wrapper">
+    <h1 class="detail-produit-wrapper__titre">{{ product.name|capitalize }}</h1>
+    {% if app.user %}
+    <a href="{{path('maj-produit', {'id': product.id})}}" class="bouton-admin">Modifier le produit</a>
+    {% endif %}
+    <div class="carac-produits">
+        <h2>Description</h2>
+        <p>
+            {{ product.description }}
+        </p>
+        <div class="carac-produits__bloc">
+            <h3>Etat : </h3>
+        <p>{{ product.state }}</p>
+        </div>
+        <div class="carac-produits__bloc">
+            <h3>Catégorie : </h3>
+        <a href=""> {{ product.category }}</a>
+        </div>
+        
+        <p class="carac-produits__prix">{{ product.price }} €</p>
+        
+    </div>
+
+</div>
+{% endblock %}

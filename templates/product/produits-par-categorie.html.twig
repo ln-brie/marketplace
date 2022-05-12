@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les produits {{ categorie.nom }}{% endblock %}
+
+{% block body %}
+
+<div class="produits-categorie-wrapper">
+    <h1 class="produits-categorie-wrapper__titre">Produits {{ categorie.nom|capitalize }}</h1>
+    {% if app.user %}
+    <a href="{{path('maj-categorie', {'id' : categorie.id})}}" class="bouton-admin">Modifier la catégorie</a>
+    {% endif %}
+
+    <p>{{categorie.description }}</p>
+
+
+    {% if produits %}
+    <div class="liste-produits-categorie">
+        {% for p in produits %}
+        <a href="{{ path('single-product', {'id' : p.id }) }}" class="nv-produit">
+            <h2>{{ p.name|capitalize }}</h2>
+        </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>Pas encore d'article dans cette catégorie... revenez plus tard !</p>
+    {% endif %}
+
+
+
+</div>
+{% endblock %}

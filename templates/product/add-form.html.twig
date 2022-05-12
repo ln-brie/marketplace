@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{titre}} un produit{% endblock %}
+
+{% block body %}
+
+<div class="form-product-wrapper">
+    <h1 class="form-product-wrapper__title">{{titre}} un produit</h1>
+    <div class="formulaire">
+        {{ form(formProduct) }}
+    </div>
+
+</div>
+{% endblock %}

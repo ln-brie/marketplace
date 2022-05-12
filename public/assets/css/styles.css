@@ -1,0 +1,266 @@
+:root {
+    --primary : #F64697;
+    --secondary : #FFDD49;
+    --tertiary : #092C79;   
+}
+
+header, html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: var(--primary);
+}
+
+header img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.nav-top {
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--primary);
+    margin: 0;
+    padding: 0 1em 1em;
+    position: relative;
+    
+}
+
+.nav-top__bouton {
+    margin: auto 1em;
+    list-style: none;    
+}
+
+.nav-top__bouton__lien {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav-top__user {
+    justify-self: flex-end;
+    list-style: none;
+    position: absolute;
+    right: 4em;
+    bottom: 1em;
+}
+
+.nav-top__user .nav-top__bouton__lien {
+    margin: 0;
+    padding: 0;
+}
+
+.accueil-wrapper,
+.detail-produit-wrapper,
+.produits-index-wrapper,
+.category-index-wrapper,
+.produits-categorie-wrapper,
+.login-wrapper,
+.form-product-wrapper {
+    width: 80%;
+    margin: auto auto 5em;
+}
+
+.login-wrapper {
+    padding-top: 3em;
+}
+
+.accueil-wrapper__titre, 
+.detail-produit-wrapper__titre,
+.category-index-wrapper__titre,
+.produits-categorie-wrapper__titre,
+.form-product-wrapper__title,
+.produits-index-wrapper__title {
+    text-align: center;
+    color: var(--tertiary);
+}
+
+.presentation__equipe,
+.presentation__valeurs,
+.nouveautes {
+    margin-top: 3em;
+}
+
+.presentation__equipe__titre, 
+.presentation__valeurs__titre,
+.nouveautes__titre{
+    color: var(--primary);
+    text-align: left;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.nouveautes__produits {
+    display: flex;
+    justify-content: space-around;
+    padding: 2em;
+}
+
+.nv-produit {
+    height: 10em;
+    width: 10em;
+    border-radius: 10px;
+    background-color: grey;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: 300ms;
+    text-decoration: none;
+    color: var(--secondary);
+    font-size: 16px;
+    text-transform: capitalize;
+    margin: 1em;
+}
+
+.nv-produit:hover {
+    background-color: var(--secondary);
+    color: var(--tertiary);
+}
+
+.nv-produit h2 {
+    text-align: center;
+}
+
+
+
+.presentation__equipe div,
+.presentation__valeurs div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.presentation__valeurs div {
+    flex-direction: row-reverse;
+}
+
+.presentation__equipe img,
+.presentation__valeurs img {
+    max-width: 30%;
+    max-height: 200px;
+    height: fit-content;
+    margin: auto 0;
+}
+
+.presentation__equipe div div,
+.presentation__valeurs div div {
+    display: block;
+    width: 65%;
+}
+
+.nouveautes__produits {
+    margin: auto;
+    text-align: center;
+    width: 60%;
+}
+
+.carac-produits__bloc {
+    display: flex;
+    align-items: baseline;
+}
+
+.carac-produits__bloc h3 {
+    margin-right: 1em;
+}
+
+.carac-produits__prix {
+    color: var(--primary);
+    font-size: 30px;
+    font-weight: bold;
+    margin: 2em auto;
+    border: 2px solid var(--tertiary);
+    display: block;
+    width: 6em;
+    text-align: center;
+    padding: 5px;
+    
+}
+
+.liste-produits,
+.liste-produits-categorie {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.liste-categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.liste-categories__item {
+    width: 13em;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: lightgrey;
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: 300ms;    
+}
+
+.liste-categories__item:hover {
+    background-color: var(--primary);
+    color: lightgrey;
+}
+
+.formulaire #product,
+.formulaire #category {
+    margin: auto;
+    width: 50%;
+}
+
+.formulaire #product div,
+.formulaire #category div {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.formulaire #product label,
+.formulaire #category label {
+    width: 20%;
+}
+
+.formulaire #product input,
+.formulaire #product textarea,
+.formulaire #product select,
+.formulaire #category input,
+.formulaire #category textarea
+ {
+    width: 80%;
+    border-radius: 5px;
+}
+
+.formulaire #product button,
+.formulaire #category button {
+    width: 50%;
+    margin: auto;
+}
+
+.bouton-admin {
+    text-align: center;
+    width: 20%;
+    margin: 3em 3em 3em 80%;
+    display: block;
+    text-decoration: none;
+    color: var(--primary);
+    background-color: var(--secondary);
+    padding: 0.5em;
+    border: thin solid var(--tertiary);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
